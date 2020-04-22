@@ -140,9 +140,7 @@ public class ScenarioTestEditorServiceImpl
     public Scenario load(final Path path) {
         try {
             final String content = ioService.readAllString(Paths.convert(path));
-
             final Scenario scenario = ScenarioXMLPersistence.getInstance().unmarshal(content);
-            scenario.setName(path.getFileName());
 
             return scenario;
         } catch (final Exception e) {
